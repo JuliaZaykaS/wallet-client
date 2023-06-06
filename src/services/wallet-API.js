@@ -1,6 +1,7 @@
 import axios from 'axios';
+import { apiUrl } from './axios_base.js';
 
-axios.defaults.baseURL = 'https://wallet-rf1.herokuapp.com/api/';
+axios.defaults.baseURL = apiUrl;
 
 async function fetchTotalBalance() {
   const info = await axios.get('/users/current');

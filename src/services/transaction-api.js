@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-axios.defaults.baseURL = 'https://wallet-rf1.herokuapp.com/api';
+import { apiUrl } from './axios_base.js';
 
-
+axios.defaults.baseURL = apiUrl;
 
 const token = {
   set(token) {
