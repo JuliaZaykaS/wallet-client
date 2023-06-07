@@ -107,8 +107,12 @@ export default function Currency({ className = '' }) {
     try {
       setIsLoading(true);
       const data = await fetchCurrency();
-      const sliced = data.slice(0, -1);
-      setCurrency([...sliced]);
+
+      const valNames = ['USD', 'EUR', 'GBP'];
+      const sliced = valNames.map(el => data.Valute[el]);
+
+      setCurrency(sliced);
+
       setIsLoading(false);
     } catch (error) {
       console.log(error);
@@ -157,15 +161,15 @@ export default function Currency({ className = '' }) {
                 ) : (
                   <>
                     {currency?.map(el => (
-                      <TableRow key={el.ccy}>
+                      <TableRow key={el.CharCode}>
                         <TableCell align="center" component="th" scope="row">
-                          {el.ccy}
+                          {el.CharCode}
                         </TableCell>
                         <TableCell align="center">
-                          {(Math.floor(el.buy * 100) / 100).toFixed(2)}
+                          {(Math.floor(el.Value * 0.97 * 100) / 100).toFixed(2)}
                         </TableCell>
                         <TableCell align="center">
-                          {(Math.floor(el.sale * 100) / 100).toFixed(2)}
+                          {(Math.floor(el.Value * 100) / 100).toFixed(2)}
                         </TableCell>
                       </TableRow>
                     ))}

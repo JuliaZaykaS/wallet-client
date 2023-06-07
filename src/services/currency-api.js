@@ -1,5 +1,4 @@
-const currencyUrl =
-  'https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5';
+const currencyUrl = 'https://www.cbr-xml-daily.ru/daily_json.js';
 
 const fetchCurrency = async () => {
   try {

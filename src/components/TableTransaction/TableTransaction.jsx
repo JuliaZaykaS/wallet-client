@@ -133,7 +133,10 @@ const TableTransaction = ({
                         <TableCell align="center">
                           {transactionType ? '-' : '+'}
                         </TableCell>
-                        <TableCell>{category.name}</TableCell>
+                        {/* <TableCell>{category?.name}</TableCell> */}
+                        <TableCell>
+                          {transactionType ? category?.name : 'Доход'}
+                        </TableCell>
                         <TableCell>{comment}</TableCell>
                         {transactionType ? (
                           <TableCell
