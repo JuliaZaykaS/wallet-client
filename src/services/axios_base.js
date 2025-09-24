@@ -1,1 +1,2 @@
-export const apiUrl = 'https://walletserver-sys55.b4a.run/api';
+export const apiUrl = 'https://wallet-server-ttcy.onrender.com/api';
+
